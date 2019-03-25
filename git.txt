@@ -1,0 +1,17 @@
+$ git push origin master  从现在起，只要本地作了提交，就可以通过命令
+
+1.查看当前远程仓库地址：
+
+git remote -v
+2.设置新的仓库地址
+
+git remote set-url origin http://.../xxx.git
+
+3.查看分支：
+
+git branch -a
+ps： 其中 remotes/*开头的表示远程分支，其他为本地分支
+4.切换分支：
+
+git checkout -b develop origin/develop
+ps : develop 表示分支
