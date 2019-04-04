@@ -3,9 +3,8 @@
   <comMentBox @fun="loadComments"></comMentBox>
 <ul class="mianComment">
   <li class="mianCommentList" v-for="item in list" :key="item.id">
-    <!--npm install stylus-loader stylus --save-->
     <span class="badGe">评论人： {{ item.name }}</span>
-    <!--<Star score="item.number" :size="24" />-->
+    <Star :score="item.number" :size="24" />
     <span> {{item.number }}</span>
     <div class="Commentary">
       {{ item.content }}
@@ -17,16 +16,16 @@
 </template>
 <script>
   import comMentBox from './comMentBox'
-  // import Star from './Star/Star'
+  import Star from './Star/Star'
     export default {
         name: "swiperIndex",
       data(){
           return {
             list:[
-              {id:Date.now(),name:'小明',content:'放学别走！' ,number:'4.4'},
-              {id:Date.now(),name:'小新',content:'打台球去！',number:'4.4' },
-              {id:Date.now(),name:'小北',content:'放学一起走！',number:'4.4'},
-              {id:Date.now(),name:'小黑',content:'放学轰趴去！',number:'4.4'},
+              {id:Date.now(),name:'小明',content:'放学别走！' ,number:'48'},
+              {id:Date.now(),name:'小新',content:'打台球去！',number:'48' },
+              {id:Date.now(),name:'小北',content:'放学一起走！',number:'48'},
+              {id:Date.now(),name:'小黑',content:'放学轰趴去！',number:'48'},
             ]
           }
       },
@@ -38,7 +37,7 @@
       },
       components:{
         comMentBox,
-        // Star
+        Star
       },
       created(){
         console.log(this)

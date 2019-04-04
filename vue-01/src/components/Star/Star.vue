@@ -46,7 +46,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "mixins.styl"
+  @import "../../common/mixins.styl"
   .star //2x图 3x图
     float left
     font-size 0
