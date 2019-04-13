@@ -1,11 +1,9 @@
 <template>
 <div class="mian">
-  <comMentBox @fun="loadComments"></comMentBox>
+  <comMentBox @func="loadComments"></comMentBox>
 <ul class="mianComment">
   <li class="mianCommentList" v-for="item in list" :key="item.id">
     <span class="badGe">评论人： {{ item.name }}</span>
-    <Star :score="item.number" :size="24" />
-    <span> {{item.number }}</span>
     <div class="Commentary">
       {{ item.content }}
     </div>
@@ -16,33 +14,30 @@
 </template>
 <script>
   import comMentBox from './comMentBox'
-  import Star from './Star/Star'
     export default {
         name: "swiperIndex",
       data(){
           return {
             list:[
-              {id:Date.now(),name:'小明',content:'放学别走！' ,number:'48'},
-              {id:Date.now(),name:'小新',content:'打台球去！',number:'48' },
-              {id:Date.now(),name:'小北',content:'放学一起走！',number:'48'},
-              {id:Date.now(),name:'小黑',content:'放学轰趴去！',number:'48'},
+              {id:Date.now(),name:'小明',content:'放学别走！'},
+              {id:Date.now(),name:'小新',content:'打台球去！'},
+              {id:Date.now(),name:'小北',content:'放学一起走！'},
+              {id:Date.now(),name:'小黑',content:'放学轰趴去！'},
             ]
           }
       },
+      created(){
+        this.loadComments()
+    },
       methods:{
-          loadComments:function () {
-            var list = JSON.parse( localStorage.getItem('cmts') || '[]')
+          loadComments: function () {
+            let list = JSON.parse( localStorage.getItem('cmts') || '[]')
             this.list = list
           }
       },
       components:{
-        comMentBox,
-        Star
-      },
-      created(){
-        console.log(this)
-        this.loadComments()
-    }
+        comMentBox
+      }
 
     }
 </script>
@@ -74,6 +69,7 @@
     font-size: .5rem;
   }
   .Commentary{
+    font-size: .5rem;
     text-indent: .4rem;
   }
 </style>

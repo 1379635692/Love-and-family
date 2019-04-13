@@ -7,18 +7,19 @@
     <mt-button icon="more" slot="right"></mt-button>
   </mt-header>
   <mt-swipe :auto="4000" class="mtSwiper">
-    <mt-swipe-item class=" mtSwiperTest">1</mt-swipe-item>
-    <mt-swipe-item class=" mtSwiperTest" >2</mt-swipe-item>
-    <mt-swipe-item class=" mtSwiperTest">3</mt-swipe-item>
-  </mt-swipe>
+  <mt-swipe-item class=" mtSwiperTest"><img src="../../assets/lo1.jpg" alt=""></mt-swipe-item>
+  <mt-swipe-item class=" mtSwiperTest" ><img src="../../assets/qq.jpg" alt=""></mt-swipe-item>
+  <mt-swipe-item class=" mtSwiperTest"><img src="../../assets/lo1.jpg" alt=""></mt-swipe-item>
+</mt-swipe>
   <div class="swiperTxt">
-    <p class="d1">分享你的故事，感受你的紊乱</p>
+    <p class="d1">分享你的故事，感受你的紊乱,把你得故事告诉，我在倾听</p>
   </div>
   <!--五星评价-->
   <div class="mainContair">
     <div class="mainContairStars">
-
-      </div>
+      <span>风一样的女子</span>
+      <span class="star-do">动态</span>
+    </div>
     <!--f2-->
     <div class="mainContairFabulous">
       <p class="fiveStars">
@@ -30,7 +31,7 @@
         <i>180</i>
       </p>
     </div>
-    </div>
+  </div>
   <!--das-->
   <div class="comG">
     <div class="comMent">
@@ -46,24 +47,63 @@
   </div>
   <!--评论-->
   <div class="miiTio" v-show="butShow">
-    <div class="releaseLess">
-      <input class="addTo" type="text" v-model="newitem" >
-      <button v-on:click="clickKey">发布</button>
-    </div>
-
-    <!--品论添加生成列表-->
-    <ul>
-      <li v-for="item in items" v-text="item.event"
-          v-bind:class="{red:item.isFinish}" v-on:click="liClick(item)"></li>
-    </ul>
+    <swiperIndex></swiperIndex>
   </div>
-
   <!--da-->
   <div class="goodFriend">
     <button>打赏</button>
     <button>验证加好友</button>
   </div>
-<!--weibu-->
+
+  <mt-swipe :auto="4000" class="mtSwiper">
+    <mt-swipe-item class=" mtSwiperTest"><img src="../../assets/lo1.jpg" alt=""></mt-swipe-item>
+    <mt-swipe-item class=" mtSwiperTest" ><img src="../../assets/qq.jpg" alt=""></mt-swipe-item>
+    <mt-swipe-item class=" mtSwiperTest"><img src="../../assets/lo1.jpg" alt=""></mt-swipe-item>
+  </mt-swipe>
+  <div class="swiperTxt">
+    <p class="d1">分享你的故事，感受你的紊乱,把你得故事告诉，我在倾听</p>
+  </div>
+  <!--五星评价-->
+  <div class="mainContair">
+    <div class="mainContairStars">
+      <span>风一样的女子</span>
+      <span class="star-do">动态</span>
+    </div>
+    <!--f2-->
+    <div class="mainContairFabulous">
+      <p class="fiveStars">
+        <em>五星数量</em>
+        <i>80</i>
+      </p>
+      <p class="thumbsUp">
+        <em>点赞</em>
+        <i>180</i>
+      </p>
+    </div>
+  </div>
+  <!--das-->
+  <div class="comG">
+    <div class="comMent">
+      <div class="comMentTest">
+        <h4>点评</h4>
+        <span class="d2">心理天使</span>
+        <i class="d3">五星</i>
+      </div>
+      <div class="comMentBack" @click=open>
+        &gt
+      </div>
+    </div>
+  </div>
+  <!--评论-->
+  <div class="miiTio" v-show="butShow">
+    <swiperIndex></swiperIndex>
+  </div>
+  <!--da-->
+  <div class="goodFriend">
+    <button>打赏</button>
+    <button>验证加好友</button>
+  </div>
+<!--尾部导航栏-->
   <mt-tabbar >
     <mt-tab-item id="聊天">
       聊天
@@ -82,6 +122,7 @@
 </template>
 
 <script>
+  import swiperIndex from '../../components/swiperIndex'
     export default {
         name: "homePage",
       data (){
@@ -91,6 +132,9 @@
             butShow:false
           }
           },
+      components:{
+        swiperIndex
+      },
       methods: {
         liClick: function (item) {
           item.isFinish = !item.isFinish;
@@ -110,15 +154,17 @@
 </script>
 
 <style scoped>
-  /*添加评论*/
-  .addTo{
-    width: 60%;
-    height: 1rem;
-    /*margin: 0.2rem auto;*/
-    border: 1px solid;
-    color: #000;
-    font-size: 0.6rem;
-    text-indent: .2rem;
+  .mint-header{
+    height: 1.4rem;
+    line-height: 1.4rem;
+    background-color: white;
+    color: black;
+    border-bottom: 2px solid #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 33;
   }
   ul{
     width: 100%;
@@ -134,53 +180,44 @@
     width: 90%;
     margin: .3rem auto;
   }
-  .miiTio{
-
-  }
-  .releaseLess{
-    width: 90%;
-    margin: 0.3rem auto;
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-
-  }
   button{
     width: 20%;
     height: 1.2rem;
     line-height: 1.2rem;
     text-align: center;
     border: none;
-    background-color: red;
   }
   /*main*/
   .main{
    width: 100%;
     color: black;
+    padding-bottom: 1.4rem;
   }
   .mtSwiper{
-    border: 1px solid;
-    height: 7rem;
+    height: 10rem;
+    margin-top: 1.4rem;
   }
   .mtSwiperTest{
-    line-height: 7rem;
+    line-height: 10rem;
+  }
+  .mtSwiperTest img{
+    width: 100%;
+    height: 100%;
   }
   /*简单介绍*/
   .swiperTxt{
     width: 100%;
-    height: 1.2rem;
+    height: 2rem;
   }
   .swiperTxt .d1{
     color: #000;
-    font-size: .6rem;
-    line-height: 1.2rem;
-    background-color: burlywood;
-    margin: 0;
+    height: 2rem;
+    font-size: .56rem;
+    margin: 0 .2rem;
   }
   .mainContair{
     height: 1.3rem;
     line-height: 1.3rem;
-    border: 1px solid red;
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -191,34 +228,48 @@
   }
 
   .mainContairStars{
-    width: 50%;
-    color: red;
+    width: 40%;
+    color: #000;
     overflow: hidden;
-    border: 1px solid;
-  }
-  .mainContairFabulous{
-    border: 1px solid;
-    width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color:red;
+    font-size: .3rem;
+  }
+  .mainContairFabulous{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color:#000;
+    font-size: .3rem;
 
+  }
+  .star-do{
+
+    height: .4rem;
+    line-height: .4rem;
+    width: 1rem;
+    border: 2px solid #000;
+    border-radius: 25%;
+    padding: .2rem;
   }
   em{
     margin-right: 0.4rem;
   }
   .comG{
-    width: 100%;
-    background-color: burlywood;
+    background-color: #fff;
     overflow: hidden;
+    border: 2px solid #000;
+    border-radius: 10%;
+    color: #000;
+    margin: 0 .3rem;
   }
   .comMent{
     width: 90%;
-    height: 1.4rem;
-    line-height: 1.4rem;
+    height: 1rem;
+    line-height: 1rem;
     margin: 0 auto;
-    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -229,9 +280,10 @@
     height: 1.4rem;
     line-height: 1.4rem;
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     align-content: center;
     overflow: hidden;
+    font-size:.56rem;
   }
   h4{
     margin: 0;
@@ -255,7 +307,7 @@
     width: 30%;
     line-height: 1.4rem;
     text-align: right;
-    color: #fff;
+    color: #000;
     font-size: .9rem;
 
   }
@@ -266,22 +318,38 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 1rem 0;
+    margin: .5rem 0;
     height: 2rem;
     color: #fff;
     border: 1px solid ;
   }
   .goodFriend button{
-    width: 6rem;
-    height: 2rem;
-    line-height: 2rem;
-    background-color: red;
+    width: 4rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    background-color: #fff;
+    border: 2px solid #000;
     text-align: center;
-    border: none;
-    color: #fff;
+    color: #000;
+    border-radius: 10px;
 
   }
   .goodFriend button:hover{
     cursor: pointer;
+  }
+  .mint-tabbar{
+    position: fixed;
+    z-index: 33;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    background-color: #e9e9e9;
+    font-size: .7rem;
+  }
+  .mint-tab-item-label{
+    font-size: .7rem;
+    font-weight: bold;
   }
 </style>
