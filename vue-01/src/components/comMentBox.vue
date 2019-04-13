@@ -35,16 +35,19 @@
           // 把最新的评论push进去到这个数组
           //如果获取到的localStorage中的评论字符串为空不存在,则返回一个 '[]' 让json.parse去转换
           // 把最新的评论列表数组，再次调用 JSON.stringify 转为数组字符串 然后调用localStorge.setItem（）
-          let comment ={ id: Date.now(), name: this.user, content:this.content }
+          var comment ={ id: Date.now(), name: this.user, content:this.content }
 
           //从localStorage 中获取所以评论
-          let list = JSON.parse( localStorage.getItem('cmts') || '[]')
+          var list = JSON.parse( localStorage.getItem('cmts') || '[]')
           list.unshift(comment)
 
           //重新保存最新的评论
           localStorage.setItem('cmts',JSON.stringify(list))
 
           this.user = this.content = ""
+
+          //将方法给子组件
+          this.$emit("fun")
         }
       }
     }
