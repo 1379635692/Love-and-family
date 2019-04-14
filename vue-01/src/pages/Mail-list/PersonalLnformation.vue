@@ -1,84 +1,21 @@
 <template>
 <div class="main">
-  <mt-header title="">
-    <router-link to="/" slot="left">
-      <mt-button icon="back"></mt-button>
-    </router-link>
-    <mt-button icon="more" slot="right"></mt-button>
-  </mt-header>
-  <mt-swipe :auto="4000" class="mtSwiper">
-  <mt-swipe-item class=" mtSwiperTest"><img src="../../assets/lo1.jpg" alt=""></mt-swipe-item>
-  <mt-swipe-item class=" mtSwiperTest" ><img src="../../assets/qq.jpg" alt=""></mt-swipe-item>
-  <mt-swipe-item class=" mtSwiperTest"><img src="../../assets/lo1.jpg" alt=""></mt-swipe-item>
-</mt-swipe>
+ <div class="personal_title">
+     <img src="../../assets/lo1.jpg" alt="">
+ </div>
   <div class="swiperTxt">
     <p class="d1">分享你的故事，感受你的紊乱,把你得故事告诉，我在倾听</p>
   </div>
   <!--五星评价-->
   <div class="mainContair">
-    <div class="mainContairStars">
-      <span>风一样的女子</span>
-      <span class="star-do">动态</span>
-    </div>
-    <!--f2-->
-    <div class="mainContairFabulous">
-      <p class="fiveStars">
-        <em>五星数量</em>
-        <i>80</i>
-      </p>
-      <p class="thumbsUp">
-        <em>点赞</em>
-        <i>180</i>
-      </p>
-    </div>
-  </div>
-  <!--das-->
-  <div class="comG">
-    <div class="comMent">
-      <div class="comMentTest">
-        <h4>点评</h4>
-        <span class="d2">心理天使</span>
-        <i class="d3">五星</i>
-      </div>
-      <div class="comMentBack" @click=open>
-        &gt;
-      </div>
-    </div>
-  </div>
-  <!--评论-->
-  <div class="miiTio" v-show="butShow">
-    <swiperIndex></swiperIndex>
-  </div>
-  <!--da-->
-  <div class="goodFriend">
-    <button>打赏</button>
-    <button>验证加好友</button>
-  </div>
+      <!-- 5 -->
+   <div class="star_five">
 
-  <mt-swipe :auto="4000" class="mtSwiper">
-    <mt-swipe-item class=" mtSwiperTest"><img src="../../assets/lo1.jpg" alt=""></mt-swipe-item>
-    <mt-swipe-item class=" mtSwiperTest" ><img src="../../assets/qq.jpg" alt=""></mt-swipe-item>
-    <mt-swipe-item class=" mtSwiperTest"><img src="../../assets/lo1.jpg" alt=""></mt-swipe-item>
-  </mt-swipe>
-  <div class="swiperTxt">
-    <p class="d1">分享你的故事，感受你的紊乱,把你得故事告诉，我在倾听</p>
-  </div>
-  <!--五星评价-->
-  <div class="mainContair">
-    <div class="mainContairStars">
-      <span>风一样的女子</span>
-      <span class="star-do">动态</span>
-    </div>
+   </div>
     <!--f2-->
     <div class="mainContairFabulous">
-      <p class="fiveStars">
-        <em>五星数量</em>
-        <i>80</i>
-      </p>
-      <p class="thumbsUp">
-        <em>点赞</em>
+        <span>赞</span>
         <i>180</i>
-      </p>
     </div>
   </div>
   <!--das-->
@@ -98,10 +35,41 @@
   <div class="miiTio" v-show="butShow">
     <swiperIndex></swiperIndex>
   </div>
-  <!--da-->
-  <div class="goodFriend">
-    <button>打赏</button>
-    <button>验证加好友</button>
+  <div class="con_text">
+      <div class="con_nab">
+           <span>2/25</span>
+           <span>新起之秀干倒互联网一大片</span>
+      </div>
+      <div class="con_img">
+          <img src="../../assets/lo1.jpg" alt="">
+            <img src="../../assets/lo1.jpg" alt="">
+              <img src="../../assets/lo1.jpg" alt="">
+      </div>
+     
+  </div>
+  <div class="con_text">
+      <div class="con_nab">
+           <span>2/25</span>
+           <span>新起之秀干倒互联网一大片</span>
+      </div>
+      <div class="con_img">
+          <img src="../../assets/lo1.jpg" alt="">
+            <img src="../../assets/lo1.jpg" alt="">
+              <img src="../../assets/lo1.jpg" alt="">
+      </div>
+     
+  </div>
+  <div class="con_text">
+      <div class="con_nab">
+           <span>2/25</span>
+           <span>新起之秀干倒互联网一大片</span>
+      </div>
+      <div class="con_img">
+          <img src="../../assets/lo1.jpg" alt="">
+            <img src="../../assets/lo1.jpg" alt="">
+              <img src="../../assets/lo1.jpg" alt="">
+      </div>
+     
   </div>
 <!--尾部导航栏-->
   <mt-tabbar >
@@ -124,7 +92,7 @@
 <script>
   import swiperIndex from '../../components/swiperIndex'
     export default {
-        name: "homePage",
+        name: "PersonalLnformation",
       data (){
           return {
             items: [],
@@ -154,18 +122,6 @@
 </script>
 
 <style scoped>
-  .mint-header{
-    height: 1.4rem;
-    line-height: 1.4rem;
-    background-color: white;
-    color: black;
-    border-bottom: 2px solid #000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 33;
-  }
   ul{
     width: 100%;
     margin: 0;
@@ -193,17 +149,14 @@
     color: black;
     padding-bottom: 1.4rem;
   }
-  .mtSwiper{
-    height: 10rem;
-    margin-top: 1.4rem;
-  }
-  .mtSwiperTest{
-    line-height: 10rem;
-  }
-  .mtSwiperTest img{
-    width: 100%;
-    height: 100%;
-  }
+ .personal_title{
+     width: 100%;
+     height: 8rem;
+ }
+ .personal_title img{
+     width: 100%;
+     height: 100%;
+ }
   /*简单介绍*/
   .swiperTxt{
     width: 100%;
@@ -212,6 +165,7 @@
   .swiperTxt .d1{
     color: #000;
     height: 2rem;
+    line-height: 1rem;
     font-size: .56rem;
     margin: 0 .2rem;
   }
@@ -226,16 +180,6 @@
     align-self: center;
     padding: 0.2rem;
   }
-
-  .mainContairStars{
-    width: 40%;
-    color: #000;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: .3rem;
-  }
   .mainContairFabulous{
     width: 50%;
     display: flex;
@@ -243,7 +187,11 @@
     align-items: center;
     color:#000;
     font-size: .3rem;
+    color: indianred;
 
+  }
+  .mainContairFabulous span{
+      margin-right: .5rem
   }
   .star-do{
 
@@ -259,8 +207,7 @@
   .comG{
     background-color: #fff;
     overflow: hidden;
-    border: 1px solid #000;
-    color: #000;
+   color: indianred;
     margin: 0 .3rem;
   }
   .comMent{
@@ -305,34 +252,11 @@
     width: 30%;
     line-height: 1.4rem;
     text-align: right;
-    color: #000;
+   color: indianred;
     font-size: .9rem;
 
   }
   .comMentBack:hover{
-    cursor: pointer;
-  }
-  .goodFriend{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: .5rem 0;
-    height: 2rem;
-    color: #fff;
-    border: 1px solid ;
-  }
-  .goodFriend button{
-    width: 4rem;
-    height: 1.2rem;
-    line-height: 1.2rem;
-    background-color: #fff;
-    border: 3px solid #000;
-    text-align: center;
-    color: #000;
-    border-radius: 10px;
-
-  }
-  .goodFriend button:hover{
     cursor: pointer;
   }
   .mint-tabbar{
@@ -350,4 +274,37 @@
     font-size: .7rem;
     font-weight: bold;
   }
+  .star_five{
+      width: 100%;
+      height: auto;
+      /* border: 1px solid */
+  }
+  .con_text{
+      width: 90%;
+      margin: .5rem auto;
+  }
+  .con_img{
+      width: 100%;
+      height: 3rem;
+  }
+  .con_img img{
+      width: 3rem;
+      height: 2.5rem;
+      border-radius: 10%;
+      margin:  0 .6rem;
+  }
+  .con_nab{
+      height: 2rem;
+      font-size: .56rem;
+      color: #000;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 .6rem;
+  }
+   .con_nab span:first-child{
+       margin-right: 1rem;
+       color: #000;
+       font-weight:bold;
+   }
 </style>
