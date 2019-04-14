@@ -18,3 +18,12 @@ ps : develop 表示分支
 
 初始化设置本地仓库和远程仓库得链接
 git remote add origin 加上生成得ssh链接 
+
+
+
+新建分支
+git branch xxx (xxx填写你的分支名称)
+
+
+切换到某一分支
+git checkout xxx (xxx填写要切换的分支名称）
