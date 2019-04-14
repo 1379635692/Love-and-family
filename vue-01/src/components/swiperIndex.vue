@@ -4,7 +4,7 @@
 <ul class="mianComment">
   <li class="mianCommentList" v-for="item in list" :key="item.id">
     <span class="badGe">评论人： {{ item.name }}</span>
-    <Star :score="item.number" :size="24" />
+    <!--<Star :score="item.number" :size="24" />-->
     <span> {{item.number }}</span>
     <div class="Commentary">
       {{ item.content }}
@@ -16,7 +16,7 @@
 </template>
 <script>
   import comMentBox from './comMentBox'
-  import Star from './Star/Star'
+  // import Star from './Star/Star'
     export default {
         name: "swiperIndex",
       data(){
@@ -37,7 +37,7 @@
       },
       components:{
         comMentBox,
-        Star
+        // Star入
       },
       created(){
         console.log(this)
