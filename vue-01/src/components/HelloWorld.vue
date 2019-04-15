@@ -2,7 +2,6 @@
   <div>
     <swiperIndex></swiperIndex>
   </div>
-
 </template>
 <script>
   import swiperIndex from "./swiperIndex"

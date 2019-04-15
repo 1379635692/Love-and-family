@@ -15,6 +15,9 @@ import Newstart from '../pages/People_nearby/Newstart'
 import addFriends from '../pages/communications/addFriends'
 import phonefriends from '../pages/communications/phonefriends'
 import newfriends from '../pages/communications/newfriends'
+import group from '../pages/communications/group'
+import GroupSetting from '../pages/communications/GroupSetting'
+import message from '../pages/communications/message'
 
 
 //
@@ -95,6 +98,21 @@ export default new Router({
       path: '/newfriends',
       name: 'newfriends',
       component: newfriends
+    },
+    {
+      path: '/group',
+      name: 'group',
+      component: group
+    },
+    {
+      path: '/GroupSetting',
+      name: 'GroupSetting',
+      component: GroupSetting
+    },
+    {
+      path: '/message',
+      name: 'message',
+      component: message
     }
   ]
 })

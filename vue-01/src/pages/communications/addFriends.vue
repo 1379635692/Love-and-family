@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="group">
   <mt-header title="">
     <router-link to="/" slot="left">
       <mt-button icon="back"></mt-button>
@@ -80,6 +80,13 @@
 </script>
 
 <style scoped>
+  #group{
+    width: 100%;
+    height: 100%;
+    color: #000;
+    font-size: .6rem;
+    overflow: hidden;
+  }
   .add_wrap{
     margin: 1.4rem 0;
   }

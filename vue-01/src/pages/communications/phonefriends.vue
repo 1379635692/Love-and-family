@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <!--通讯录-->
+  <div id="group">
   <header class="header">
     <div><i class="iconfont iconreturn"></i></div>
     <input type="number" placeholder="添加手机号">
@@ -74,6 +75,13 @@
 </script>
 
 <style scoped>
+  #group{
+    width: 100%;
+    height: 100%;
+    color: #000;
+    font-size: .6rem;
+    overflow: hidden;
+  }
   .add_wrap{
     margin: 1.4rem 0;
   }

@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <!--新朋友-->
+  <div id="group">
     <header class="header">
       <div><i class="iconfont iconreturn"></i></div>
       <input type="number" placeholder="">
@@ -12,7 +13,6 @@
         </div>
       </div>
     </header>
-
     <div class="add_wrap">
       <ul>
         <li>
@@ -203,6 +203,13 @@
 </script>
 
 <style scoped>
+  #group{
+    width: 100%;
+    height: 100%;
+    color: #000;
+    font-size: .6rem;
+    overflow: hidden;
+  }
   .add_wrap ul{
     list-style: none;
     margin: 0;
@@ -213,7 +220,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .2rem .6rem;
+    padding: .4rem .6rem;
     border-bottom: 1px solid #000;
     height: 1.4rem;
     line-height: 1.4rem;
