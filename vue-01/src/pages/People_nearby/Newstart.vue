@@ -16,7 +16,7 @@
           <img src="../../assets/lo1.jpg" alt="">
             <img src="../../assets/lo1.jpg" alt="">
               <img src="../../assets/lo1.jpg" alt="">
-      </div>  
+      </div>
   </div>
   <div class="con_text">
       <div class="con_nab">
@@ -120,11 +120,6 @@
   .mint-tab-item-label{
     font-size: .7rem;
     font-weight: bold;
-  }
-  .star_five{
-      width: 100%;
-      height: auto;
-
   }
   .con_text{
       width: 90%;

@@ -12,6 +12,10 @@ import setting from '../pages/Mail-list/setting'
 import Backgroundmap from '../pages/Mail-list/Backgroundmap'
 import nearby from '../pages/People_nearby/nearby'
 import Newstart from '../pages/People_nearby/Newstart'
+import addFriends from '../pages/communications/addFriends'
+import phonefriends from '../pages/communications/phonefriends'
+import newfriends from '../pages/communications/newfriends'
+
 
 //
 Vue.use(Router)
@@ -76,6 +80,21 @@ export default new Router({
       path: '/Newstart',
        name: 'Newstart',
        component: Newstart
-     }
+     },
+    {
+      path: '/addFriends',
+      name: 'addFriends',
+      component: addFriends
+    },
+    {
+      path: '/phonefriends',
+      name: 'phonefriends',
+      component: phonefriends
+    },
+    {
+      path: '/newfriends',
+      name: 'newfriends',
+      component: newfriends
+    }
   ]
 })
